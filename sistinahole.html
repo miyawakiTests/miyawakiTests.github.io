@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<h1>
+大塚国際美術館のシスティーナホール
+</h1>
+<div id="vrview"></div>
+<script src="./build/vrview.min.js"></script>
+<script>
+window.addEventListener('load', onVrViewLoad)
+function onVrViewLoad() {
+  var vrView = new VRView.Player('#vrview', {
+    image: './images/IMG_5183_panorama.JPG',
+    is_stereo: true,
+    width:'100%',
+    height:'600px',
+    default_yaw:40
+  });
+}
+</script>
+</body>
+</html>
