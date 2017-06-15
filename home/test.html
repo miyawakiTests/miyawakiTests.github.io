@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<head>
+<body>
+<div id="contents">
+	<img src = "./top.png">
+	<div class="wrapper">
+		<div id ="detail_main">
+			<div class="some_detail_box">
+		            <div class="title_area title_area_accordion">
+		                <h4 class="some_detail_title">
+		                    バーチャル内覧
+		                </h4>
+		                <br class="clear">
+		            </div>
+		            <div class="accordion_area">
+		                <div id="sub_img_area">
+		                    <div class="sub_img_list">
+		                        <div class="list_view">
+		                            <div class="list_slide" style="width:auto; left:0px;">
+		                                    <div class="img_wrap">
+		                                    	<a href="javascript:void(0);" class="sub_img">
+		                                    		<img src="./image1.jpg" width="98" height="74" alt="">
+		                                    		<span class="text">室内</span>
+		                                    	</a>
+		                                    </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <br class="clear">
+		                </div>
+		                <div id="main_img_area">
+		                    <div class="photo_text">
+		                        （<span class="main_photo_num">1</span>／<span class="all_photo_num">1</span>枚）
+		                    </div>
+		                    <br class="clear">
+		                    <div class="main_img_list">
+		                        <div class="vrview">
+		                        </div>
+		                    </div>
+		                </div>
+		                <!--/main_img_area-->
+		                <br class="clear">
+		                <div class="bottom_text">
+		                    ※画像をクリックすると、右の画像が切り替わります
+		                </div>
+		                <div class="main_img_lightbox_guide_text">
+		                    <span class="guide_text">※画像クリックで拡大表示</span>
+		                </div>
+		                <br class="clear">
+		            </div>
+		    </div>
+	    </div>
+    </div>
+</div>
+<script src="../panorama/build/vrview.min.js"></script>
+<script>
+window.addEventListener('load', onVrViewLoad)
+function onVrViewLoad() {
+  var vrView = new VRView.Player('#vrview', {
+    image: 'https://yuttahub.github.io/images/IMG_5184_panorama.JPG',
+    is_stereo: true,
+    width:"100%",
+    height:"600px",
+    default_yaw:250
+  });
+}
+</script>
+<body>
+</html>

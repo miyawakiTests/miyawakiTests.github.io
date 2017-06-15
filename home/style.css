@@ -1,0 +1,148 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html, body {
+  background-color: #f9fafb;
+  margin: 0px;
+  padding: 0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#contents .wrapper {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#detail_main {
+    width: 980px;
+    /* float: right; */
+}
+
+.some_detail_box {
+    padding-bottom: 4px;
+    margin-bottom: 50px;
+}
+
+.some_detail_box .title_area_accordion {
+    border-bottom: 1px solid #ccc;
+}
+
+.some_detail_box .title_area {
+    background: url(./some_detail_title_bg.gif) left top no-repeat;
+    height: 39px;
+    padding: 10px 10px 0 20px;
+    font-size: 14px;
+}
+
+.some_detail_box .title_area .some_detail_title {
+    width: auto;
+    float: left;
+    padding-top: 7px;
+}
+
+br.clear {
+    line-height: 0px;
+    font-size: 0px;
+    height: 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+#detail_main .some_detail_box .accordion_area {
+    border: 1px solid #ccc;
+    border-top: none;
+    background: #FFFFFF;
+}
+
+#sub_img_area {
+    width: 290px;
+    /* border: #CCCCCC solid 1px; */
+    background: #F0F0F0;
+    float: left;
+    margin: 29px 0 0 39px;
+    min-height: 380px;
+    padding-bottom: 20px;
+}
+
+#sub_img_area .sub_img_list {
+    width: 230px;
+    margin: 24px auto 0;
+}
+
+#sub_img_area .sub_img_list .list_view {
+    width: 230px;
+    height: 272px;
+    overflow: hidden;
+    position: relative;
+}
+
+#sub_img_area .sub_img_list .list_view .list_slide {
+    position: absolute;
+}
+
+#sub_img_area .sub_img_list .sub_img:hover, #sub_img_area .sub_img_list .on {
+    background-position: right top;
+}
+
+#sub_img_area .sub_img_list .sub_img {
+    display: block;
+    background: url(./sub_img_bg.gif) left top no-repeat;
+    width: 108px;
+    height: 80px;
+    float: left;
+    text-align: center;
+    padding-top: 4px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#sub_img_area .sub_img_list .sub_img:hover .text, #sub_img_area .sub_img_list .on .text {
+    width: 104px;
+    height: 18px;
+    padding-top: 6px;
+    background: url(../../img/img_re/bukkens/sub_img_text_bg2.png) left top no-repeat;
+    left: 2px;
+    bottom: 1px;
+}
+
+#sub_img_area .sub_img_list .sub_img .text {
+    display: block;
+    width: 106px;
+    height: 18px;
+    background: url(../../img/img_re/bukkens/sub_img_text_bg.png) left top no-repeat;
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    font-size: 11px;
+    color: #FFFFFF;
+    text-decoration: underline;
+    padding-top: 6px;
+    visibility: hidden;
+}
+
+#main_img_area {
+    width: 578px;
+    min-height: 398px;
+    border: #CCCCCC solid 1px;
+    background: #FFFFFF;
+    float: left;
+    margin: 29px 0 0 30px;
+}
+
+#main_img_area .main_img_list .main_img {
+    font-size: 0;
+    text-align: center;
+    display: none;
+}
