@@ -141,7 +141,7 @@ br.clear {
     margin: 29px 0 0 30px;
 }
 
-#main_img_area .main_img_list .main_img {
+#main_img_area .main_img_list #vrview {
     font-size: 0;
     text-align: center;
     display: none;
