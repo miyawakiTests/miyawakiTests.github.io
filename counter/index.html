@@ -33,12 +33,13 @@
 			function changeData(){
 				var text = document.getElementById("my_text").value;
 				myChatAll.set({title:"example",text:text});
+				myChatAll.push.set({title:"example",text:text});
 			}
 			
 			myChatAll.on("value",function(snapshot){
 				document.getElementById("chatText").innerText = snapshot.val().text;
 				var datas = myChatAll.toJSON;
-				alert(datas.datas);
+				//alert(datas.datas);
 			});
 		</script>
 	</body>
