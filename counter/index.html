@@ -47,7 +47,7 @@
 			});
 			
 			db.ref(location.pathname + "/visit").on("value",function(snapshot){
-				document.getElementById("countnum").innerText = snapshot.numChildren().text;
+				document.getElementById("countnum").innerText = snapshot.numChildren();
 			});
 		</script>
 	</body>
