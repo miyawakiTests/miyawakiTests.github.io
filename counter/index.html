@@ -48,6 +48,11 @@
 			
 			db.ref(location.pathname + "/visit").on("value",function(snapshot){
 				document.getElementById("countnum").innerText = snapshot.numChildren();
+				snapshot.forEach(function(childSnapshot){
+					if((parseInt(new Date()/1000)- childSnapshot.timestamp) >= 600000){
+						childSnapshot.ref().remove();
+					}
+				});
 			});
 			
 			function getUniqueStr(myStrong){
