@@ -15,6 +15,11 @@
 		    messagingSenderId: "357407106723"
 		  };
 		  firebase.initializeApp(config);
+		  
+		  firebase.database().ref('test').child('first').set('test1');
+		  firebase.database().ref('test').set({second:'test2'});
+		  var test = firebase.database().ref('test').toString();
+		  alert(test);
 		</script>
 	</body>
 </html>
