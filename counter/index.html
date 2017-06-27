@@ -34,6 +34,8 @@
 				var text = document.getElementById("my_text").value;
 				//myChatAll.set({title:"example",text:text});
 				myChatAll.push().set({title:"example",text:text});
+				var datas = myChatAll.toJSON;
+				alert(datas.length);
 			}
 			
 			myChatAll.on("value",function(snapshot){
