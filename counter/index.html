@@ -31,7 +31,7 @@
 		<script>
 			var db = firebase.database();
 			var myChatAll = db.ref("/my/chat/all");
-			var myCount = db.ref(location.pathname + "/visit/" + navigator.appName);
+			var myCount = db.ref(location.pathname + "/visit/" + getUniqueStr());
 			
 			$(document).ready(function(){
 				myCount.set({timestamp:parseInt(new Date()/1000)});
@@ -49,6 +49,12 @@
 			db.ref(location.pathname + "/visit").on("value",function(snapshot){
 				document.getElementById("countnum").innerText = snapshot.numChildren();
 			});
+			
+			function getUniqueStr(myStrong){
+				 var strong = 1000;
+				 if (myStrong) strong = myStrong;
+				 return new Date().getTime().toString(16)  + Math.floor(strong*Math.random()).toString(16)
+			}
 		</script>
 	</body>
 </html>
