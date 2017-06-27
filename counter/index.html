@@ -18,7 +18,7 @@
 		  
 		  firebase.database().ref('test').child('first').set('test1');
 		  firebase.database().ref('test').set({second:'test2'});
-		  var test = firebase.database().ref('test').toString();
+		  var test = firebase.database().ref('test').toJSON();
 		  alert(test);
 		</script>
 	</body>
