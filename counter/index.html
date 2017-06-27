@@ -49,10 +49,8 @@
 			db.ref(location.pathname + "/visit").on("value",function(snapshot){
 				document.getElementById("countnum").innerText = snapshot.numChildren();
 				snapshot.forEach(function(childSnapshot){
-				alert(parseInt(new Date()/1000) - childSnapshot.val().timestamp);
 					if((parseInt(new Date()/1000) - childSnapshot.val().timestamp) >= 120){
-						alert(childSnapshot.key);
-						childSnapshot.ref(childSnapshot.key).remove();
+						db.ref(location.pathname + "/visit/" + childSnapshot.key).remove();
 					}
 				});
 			});
