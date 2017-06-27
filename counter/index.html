@@ -38,7 +38,7 @@
 			myChatAll.on("value",function(snapshot){
 				document.getElementById("chatText").innerText = snapshot.val().text;
 				var datas = myChatAll.toJSON;
-				alert(datas.keys());
+				alert(datas.datas);
 			});
 		</script>
 	</body>
