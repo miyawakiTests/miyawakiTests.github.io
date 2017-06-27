@@ -31,7 +31,7 @@
 		<script>
 			var db = firebase.database();
 			var myChatAll = db.ref("/my/chat/all");
-			var myCount = db.ref(location.pathname + "/visit/" + navigator.userAgent);
+			var myCount = db.ref(location.pathname + "/visit/" + location.hostname);
 			
 			$(document).ready(function(){
 				myCount.set({timestamp:parseInt(new Date()/1000)});
