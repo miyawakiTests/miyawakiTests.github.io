@@ -1,6 +1,6 @@
 <html>
 	<head>
-	
+		<script src="https://miyawakitests.github.io/scripts/jquery-3.2.1.min.js">
 		<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 		<script>
 		  // Initialize Firebase
@@ -17,6 +17,8 @@
 	</head>
 	<body>
 		<div id="message">
+			<p>現在このページを見ている人の数：<span id="countnum"></span></p>
+			<br>
 			<h1>Firebaseてすと</h1>
 			<p>文字を入れると更新されます</p>
 			<ul>
@@ -29,19 +31,23 @@
 		<script>
 			var db = firebase.database();
 			var myChatAll = db.ref("/my/chat/all");
+			var myCount = db.ref(location.pathname + "/visit/" + navigator.appName);
+			
+			$(document).ready(function(){
+				myCount.set({timestamp:parseInt(new Date()/1000)});
+			});
 			
 			function changeData(){
 				var text = document.getElementById("my_text").value;
-				//myChatAll.set({title:"example",text:text});
-				myChatAll.push().set({title:"example",text:text});
-				var datas = myChatAll.toJSON + ".json";
-				alert(Object.keys(datas).length);
+				myChatAll.set({title:"example",text:text});
 			}
 			
 			myChatAll.on("value",function(snapshot){
 				document.getElementById("chatText").innerText = snapshot.val().text;
-				var datas = myChatAll.toJSON;
-				//alert(datas.datas);
+			});
+			
+			db.ref(location.pathname + "/visit").on("value",function(snapshot){
+				udocument.getElementById("countnum").innerText = snapshot.numChildren().text;
 			});
 		</script>
 	</body>
