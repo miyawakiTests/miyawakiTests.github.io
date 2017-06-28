@@ -38,11 +38,11 @@
 			function changeData(){
 				var text = document.getElementById("my_text").value;
 				chat1.set({title:"example",text:text,timestamp:parseInt(new Date().getTime())});
+				chat3.set({title:"example",text:document.getElementById("chatText2").innerText,timestamp:parseInt(new Date().getTime())});
+				chat2.set({title:"example",text:document.getElementById("chatText1").innerText,timestamp:parseInt(new Date().getTime())});
 			}
 			
 			chat1.on("value",function(snapshot){
-				chat3.set({title:"example",text:document.getElementById("chatText2").innerText,timestamp:parseInt(new Date().getTime())});
-				chat2.set({title:"example",text:document.getElementById("chatText1").innerText,timestamp:parseInt(new Date().getTime())});
 				document.getElementById("chatText1").innerText = snapshot.val().text;
 				chat3.once("value").then(function(snapshot){document.getElementById("chatText3").innerText = snapshot.val().text;});
 				chat2.once("value").then(function(snapshot){document.getElementById("chatText2").innerText = snapshot.val().text;});
