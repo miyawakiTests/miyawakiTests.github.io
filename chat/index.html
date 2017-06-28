@@ -41,8 +41,8 @@
 			
 			myChatAll.on("value",function(snapshot){
 				document.getElementById("chatText1").innerText = snapshot.val().text;
-				document.getElementById("chatText3").innerText = document.getElementById("chatText2").text;
-				document.getElementById("chatText2").innerText = document.getElementById("chatText1").text;
+				document.getElementById("chatText3").innerText = document.getElementById("chatText2").innerText;
+				document.getElementById("chatText2").innerText = document.getElementById("chatText1").innerText;
 			});
 		</script>
 	</body>
