@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyDTrbn8JbeBpQtXAy9qSkdG0nIfXh0ttBg",
+		    authDomain: "realtimevisitor.firebaseapp.com",
+		    databaseURL: "https://realtimevisitor.firebaseio.com",
+		    projectId: "realtimevisitor",
+		    storageBucket: "realtimevisitor.appspot.com",
+		    messagingSenderId: "357407106723"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script src="https://miyawakitests.github.io/scripts/jquery-3.2.1.min.js"></script>
+	</head>
+	<body>
+		<div id="message">
+			<p>現在このページを見ている人の数：<span id="countnum"></span></p>
+			<br>
+			<h1>Firebaseてすと</h1>
+			<p></p>
+			<ul>
+				<li id="chatText3"></li>
+				<li id="chatText2"></li>
+				<li id="chatText1"></li>
+				<li><input type="text" name="" id ="my_text">&nbsp;<a onclick="changeData()">更新</a></li>
+				<li>文字を入力したら更新ボタンを押してください。</li>
+			</ul>
+		</div>
+		
+		<script>
+			var db = firebase.database();
+			var myChatAll = db.ref("/my/chat/all");
+			
+			function changeData(){
+				var text = document.getElementById("my_text").value;
+				myChatAll.set({title:"example",text:text});
+			}
+			
+			myChatAll.on("value",function(snapshot){
+				document.getElementById("chatText1").innerText = snapshot.val().text;
+				document.getElementById("chatText3").innerText = document.getElementById("chatText2").text;
+				document.getElementById("chatText2").innerText = document.getElementById("chatText1").text;
+			});
+		</script>
+	</body>
+</html>
