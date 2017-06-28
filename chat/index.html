@@ -17,15 +17,13 @@
 	</head>
 	<body>
 		<div id="message">
-			<p>現在このページを見ている人の数：<span id="countnum"></span></p>
-			<br>
-			<h1>Firebaseてすと</h1>
+			<h1>3ログチャット</h1>
 			<p></p>
 			<ul>
 				<li id="chatText3"></li>
 				<li id="chatText2"></li>
 				<li id="chatText1"></li>
-				<li><input type="text" name="" id ="my_text">&nbsp;<a onclick="changeData()">更新</a></li>
+				<li><input type="text" name="" id ="my_text">&nbsp;<input type="button" onclick="changeData()" value="更新"></li>
 				<li>文字を入力したら更新ボタンを押してください。</li>
 			</ul>
 		</div>
@@ -40,9 +38,9 @@
 			}
 			
 			myChatAll.on("value",function(snapshot){
-				document.getElementById("chatText1").innerText = snapshot.val().text;
 				document.getElementById("chatText3").innerText = document.getElementById("chatText2").innerText;
 				document.getElementById("chatText2").innerText = document.getElementById("chatText1").innerText;
+				document.getElementById("chatText1").innerText = snapshot.val().text;
 			});
 		</script>
 	</body>
