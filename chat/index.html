@@ -30,16 +30,21 @@
 		
 		<script>
 			var db = firebase.database();
-			var myChatAll = db.ref("/my/chat/all");
+			var myChatAll = db.ref("/my/chat");
+			var chat1 = myChatAll.child("chat1");
+			var chat2 = myChatAll.child("chat2");
+			var chat3 = myChatAll.child("chat3");
 			
 			function changeData(){
 				var text = document.getElementById("my_text").value;
-				myChatAll.set({title:"example",text:text,timestamp:parseInt(new Date().getTime())});
+				chat1.set({title:"example",text:text,timestamp:parseInt(new Date().getTime())});
 			}
 			
-			myChatAll.on("value",function(snapshot){
-				document.getElementById("chatText3").innerText = document.getElementById("chatText2").innerText;
-				document.getElementById("chatText2").innerText = document.getElementById("chatText1").innerText;
+			chat1.on("value",function(snapshot){
+				chat3.set({title:"example",text:document.getElementById("chatText2").innerText,timestamp:parseInt(new Date().getTime())});
+				chat2.set({title:"example",text:document.getElementById("chatText1").innerText,timestamp:parseInt(new Date().getTime())});
+				document.getElementById("chatText3").innerText = chat3.val().text;
+				document.getElementById("chatText2").innerText = chat2.val().text;
 				document.getElementById("chatText1").innerText = snapshot.val().text;
 			});
 		</script>
