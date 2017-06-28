@@ -34,7 +34,7 @@
 			
 			function changeData(){
 				var text = document.getElementById("my_text").value;
-				myChatAll.set({title:"example",text:text});
+				myChatAll.set({title:"example",text:text,timestamp:parseInt(new Date().getTime())});
 			}
 			
 			myChatAll.on("value",function(snapshot){
