@@ -41,11 +41,11 @@
 			}
 			
 			chat1.on("value",function(snapshot){
+				document.getElementById("chatText1").innerText = snapshot.val().text;
 				chat3.set({title:"example",text:document.getElementById("chatText2").innerText,timestamp:parseInt(new Date().getTime())});
 				chat2.set({title:"example",text:document.getElementById("chatText1").innerText,timestamp:parseInt(new Date().getTime())});
-				document.getElementById("chatText3").innerText = chat3.val().text;
-				document.getElementById("chatText2").innerText = chat2.val().text;
-				document.getElementById("chatText1").innerText = snapshot.val().text;
+				chat3.once("value").then(function(snapshot){document.getElementById("chatText3").innerText = snapshot.val().text;});
+				chat2.once("value").then(function(snapshot){document.getElementById("chatText2").innerText = snapshot.val().text;});
 			});
 		</script>
 	</body>
